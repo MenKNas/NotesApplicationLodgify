@@ -8,7 +8,7 @@ const TodoInput = ({handleChange,handleClickAdd}) => {
           placeholder = "Add new todo" 
           type="text"
       />
-      <button onClick={handleClickAdd}> Adds </button>
+      <button onClick={handleClickAdd}> Add Todo </button>
     </div>
   )
 }
