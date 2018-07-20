@@ -3,6 +3,7 @@ import { uniqueId } from 'lodash';
 
 import Todo from './Todo';
 import TodoList from './TodoList';
+import TodoInput from './TodoInput';
 
 export class App extends Component {
 
@@ -46,13 +47,10 @@ export class App extends Component {
           todos = {todos} 
         />
         <div className="todo-input">
-          <input 
-            onChange={this.handleChange} 
-            placeholder="..." 
-            type="text" 
-            value={todo}
-            />
-          <button onClick={this.handleClickAdd}>Add</button>
+         <TodoInput 
+           handleChange = {this.handleChange}
+           handleClickAdd = {this.handleClickAdd}
+         />
         </div>
       </div>
     )

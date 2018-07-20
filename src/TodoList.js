@@ -12,7 +12,7 @@ const TodoList = ({todos,onClickDelete}) => {
               ? todos.map((todo, index) => 
                 <Todo 
                 key={todo.id} 
-                onClickDelete={() => this.handleClickDelete(index)} 
+                onClickDelete={() => onClickDelete(index)} 
                 text={todo.text} />)
               : 'You\'re all done 🌴'
           }

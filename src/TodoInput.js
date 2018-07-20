@@ -12,3 +12,5 @@ const TodoInput = ({handleChange,handleClickAdd}) => {
     </div>
   )
 }
+
+export default TodoInput ;
