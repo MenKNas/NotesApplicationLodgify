@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { uniqueId } from 'lodash';
 
 import Todo from './Todo';
+import TodoList from './TodoList';
 
 export class App extends Component {
 
@@ -40,17 +41,17 @@ export class App extends Component {
     const { todo, todos } = this.state;
     return (
       <div className="todo-list">
-        <h1>todos</h1>
-        <p><span id="counter">1</span> remaining</p>
-        <div>
-          {
-            todos.length
-              ? todos.map((todo, index) => <Todo key={todo.id} onClickDelete={() => this.handleClickDelete(index)} text={todo.text} />)
-              : 'You\'re all done 🌴'
-          }
-        </div>
+        <TodoList 
+          onClickDelete={this.handleClickDelete}
+          todos = {todos} 
+        />
         <div className="todo-input">
-          <input onChange={this.handleChange} placeholder="..." type="text" value={todo}/>
+          <input 
+            onChange={this.handleChange} 
+            placeholder="..." 
+            type="text" 
+            value={todo}
+            />
           <button onClick={this.handleClickAdd}>Add</button>
         </div>
       </div>
