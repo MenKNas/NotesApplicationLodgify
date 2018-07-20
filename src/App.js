@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { uniqueId } from 'lodash';
 
-import { Todo } from './Todo';
+import Todo from './Todo';
 
 export class App extends Component {
 
@@ -26,7 +26,6 @@ export class App extends Component {
   };
 
   handleClickDelete = index => {
-    console.log(`Deleting todo number ${index}`);
     const { todos } = this.state;
     this.setState({ todos: [
       ...todos.slice(0, index),
