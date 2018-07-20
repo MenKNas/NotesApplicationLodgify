@@ -12,6 +12,11 @@ module.exports = {
         test: /\.js$/,
         include: SRC_DIR,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        include: SRC_DIR,
+        use: ['style-loader', 'css-loader'],
       }
     ],
   },
@@ -19,5 +24,9 @@ module.exports = {
     filename: 'bundle.js',
     path: DIST_DIR,
   },
-  plugins: [ new HtmlWebpackPlugin() ],
+  plugins: [ new HtmlWebpackPlugin({
+                 hash:true,
+                 filename:'/index.html'
+  }) 
+],
 };
